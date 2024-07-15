@@ -1,0 +1,9 @@
+.contenedor{
+    display: flex;
+}
+.titulo{
+    font-size: 2.5rem;
+    color: var(--blanco);
+    border-radius: 10px;
+    padding: 10px 20px;
+}

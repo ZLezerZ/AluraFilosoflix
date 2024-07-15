@@ -1,0 +1,88 @@
+{
+    "videos": [
+        {
+            "id": 1,
+            "categoria":"Introducción a la Filosofía",
+            "titulo": "Sócrates y Platón | Serie Documental: Filosofía | Episodio 02",
+            "descripcion": "Presentamos Sócrates y Platón. El segundo episodio 02 de la serie documental de historia de la filosofía.",
+            "url": "https://youtu.be/VKUKneAU1f4"
+        },
+        {
+            "id": 2,
+            "categoria":"Introducción a la Filosofía",
+            "titulo": "Documental 2024: Aristóteles - Vida, Filosofía y Legado",
+            "descripcion": "Sumérgete en la historia de Aristóteles y la antigua Grecia con nuestro documental completo en HD. Experimenta la Academia de Platón y el impacto del filósofo en la ciencia y política modernas. Este documental biográfico te lleva en un viaje visual por la vida del maestro griego. Explora la ética aristotélica, la metafísica y su pensamiento revolucionario en una producción que captura la esencia de la Grecia clásica. Con una calidad de imagen y sonido excepcionales, este documental histórico es una inmersión profunda en la cultura helénica y el legado de uno de sus más grandes pensadores.",
+            "url": "https://youtu.be/-lZMMWq-U6w"
+        },
+        {
+            "id": 3,
+            "categoria":"Introducción a la Filosofía",
+            "titulo": "Todos Explican MAL las 5 vías de Tomás de Aquino | Filosofía",
+            "descripcion": "Para ENTENDER BIEN las 5 vías de Tomás de Aquino para demostrar la existencia de Dios...",
+            "url": "https://youtu.be/484jBFZnStU"
+        },
+        {
+            "id": 4,
+            "categoria":"Filosofía Política",
+            "titulo": "Filosofía aquí y ahora - Foucault (I)",
+            "descripcion":"La televisión y la filosofía no forman una pareja habitual, pero el filósofo, escritor y guionista de cine José Pablo Feinmann enfrenta el desafío de abordar esta disciplina en profundidad y con un lenguaje accesible. La intención es doble; no sólo se propone revisar las preguntas fundamentales que formularon grandes filósofos, como Descartes, Kant, Hegel, Nietzsche, Heidegger, Marx o Sartre, sino también permitir que la reflexión filosófica aflore como una actitud ante el mundo que nos rodea.",
+            "url": "https://youtu.be/WtD_FJHxpWM"
+        },
+        {
+            "id": 5,
+            "categoria":"Filosofía Política",
+            "titulo": "El Capital de Karl Marx - Capítulo I 'La Mercancía' ",
+            "descripcion":"En esta Cápsula comenzamos a revisar El Capital de Karl Marx con el Primer Capítulo 'La Mercancía'. Veremos los conceptos de valor de uso, valor de cambio, valor, forma singular, particular, general del valor y forma de dinero. Terminaremos con el fetichismo de la mercancía.",
+            "url": "https://youtu.be/ih_Y0X9kUk4"
+        },
+        {
+            "id": 6,
+            "categoria":"Filosofía Política",
+            "titulo": "HANNA ARENDT: LA BANALIDAD DEL MAL Y LOS ORÍGENES DEL TOTALITARISMO",
+            "descripcion":"En esta sesión, exploro explicaciones para la realidad política mexicana contemporánea desde el pensamiento de Hanna Arendt en sus concepciones la banalidad del mal y los orígenes del totalitarismo:",
+            "url": "https://youtu.be/fmc62WS4Oko"
+        },
+        {
+            "id": 7,
+            "categoria":"Estética",
+            "titulo": "Tesis de 'Filosofía de la historia' W. Benjamin | Darío Sztajnszrajber ",
+            "descripcion":"futurock es una voz disruptiva y cuestionadora, en un momento donde los medios dejaron de serlo. Y creemos que Futurock es todo eso porque quienes están frente al micrófono y quienes escuchan somos parte de un mismo movimiento, una misma búsqueda, una misma identidad. Porque, en definitiva, soñamos el mismo mundo: uno más justo e igualitario, menos opresivo, menos careta.",
+            "url": "https://youtu.be/5K3S9zfSu-k"
+        },
+        {
+            "id": 8,
+            "categoria":"Estética",
+            "titulo": "Seminario de lectura: Teoría estética de T.W. Adorno",
+            "descripcion": "Primera sesión del 'Seminario de lectura' de la 'Teoría estética' de Adorno.",
+            "url": "https://youtu.be/pVU1N9q6HSI"
+        },
+        {
+            "id": 9,
+            "categoria":"Estética",
+            "titulo": "LA OSCURA FILOSOFÍA de Arthur Schopenhauer - EL BUDA ALEMÁN",
+            "descripcion": "En este video exponemos la filosofía de Arthur Schopenhauer, quien comúnmente es calificado como pesimista o incluso como misántropo. Se expone el concepto de Voluntad y Representación de Schopenhauer, así como su estética y su propuesta ética. Se analizan también las ideas que toma de Platón, de Kant y del hinduismo.",
+            "url": "https://youtu.be/uYjrExBb0c8"
+        },
+        {
+            "id": 10,
+            "categoria":"Epistemología",
+            "titulo": "Filosofía 2º de Bachillerato: HUME TEORÍA DEL CONOCIMIENTO (más fácil de lo que piensas) - TitiCLB",
+            "descripcion": "Es el vídeo que más me habéis pedido y por fin aquí lo tenéis. Espero que os ayude en vuestro estudio, ¡ánimo! Con Hume se produce una radicalización del empirismo y por eso (y mucho más) ocupa un lugar muy importante en la historia de la filosofía. También tienes vídeo sobre la teoria moral de Hume (emotivismo moral).",
+            "url":"https://youtu.be/2ONKTVhktA4"
+        },
+        {
+            "id": 11,
+            "categoria":"Epistemología",
+            "titulo": "Thomas S. Kuhn y la Estructura de las Revoluciones Científicas - Filosofía del siglo XX",
+            "descripcion": "Analizamos la tesis y los conceptos que expone Kuhn en su famoso libro 'La Estructura de las Revoluciones Científicas'. Paradigma, ciencia normal, anomalía, revolución científica.",
+            "url":"https://youtu.be/_t5oCPSkLW4"
+        },
+        {
+            "id": 12,
+            "categoria":"Epistemología",
+            "titulo": "Mentira la verdad IV: Descartes, Meditaciones metafísicas - Canal Encuentro HD",
+            "descripcion": "",
+            "url":"https://youtu.be/QOsVHbLFdCA"
+        }
+    ]
+}

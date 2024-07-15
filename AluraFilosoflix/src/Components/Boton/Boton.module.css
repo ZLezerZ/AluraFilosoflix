@@ -1,0 +1,27 @@
+.boton {
+    width: 150px;
+    border: 2px solid;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 3em;
+}
+
+.botonBlanco {
+    background-color: transparent;
+    color: var(--blanco);
+}
+
+.botonBlanco:hover {
+    box-shadow: inset 0 0 20px 2px var(--blanco);
+}
+
+.botonAzul {
+    color: var(--azul);
+    background-color: var(--footer);
+    box-shadow: inset 0 0 10px 2px var(--azul);
+}
+
+.botonAzul:hover {
+    box-shadow: inset 0 0 20px 2px var(--azul);
+}

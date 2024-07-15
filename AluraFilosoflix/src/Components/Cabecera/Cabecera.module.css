@@ -1,0 +1,15 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--fondo);
+    padding: 2em 4em;
+    width: 100%;
+    border-bottom: 3px solid var(--azul);
+}
+
+.contenedorBotones{
+    display: flex;
+    gap: 2em;
+    height: 50px;
+}
