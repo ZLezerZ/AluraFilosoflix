@@ -8,11 +8,9 @@ const PaginaBase = () => {
     return (
         <main>
             <Cabecera />
-                {/* <Contenedor> */}
             <ContextoGlobalProvider>
                     <Outlet></Outlet>
             </ContextoGlobalProvider>
-                {/* </Contenedor> */}
             <Rodapie />
         </main >
     )

@@ -1,0 +1,50 @@
+.contenedor{
+    width: 350px;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.encabezado{
+    width: 100%;
+}
+.encabezado iframe{
+    width: 100%;
+    height: 200px;
+}
+.contenedor h3{
+    font-size: 1.1rem;
+    color: var(--blanco);
+    padding: 0 1em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.contenedorBotones{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--footer);
+}
+
+.contenedorBotones button{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    padding: 1em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--blanco);
+}
+.icono{
+    font-size: 1.5em;
+}

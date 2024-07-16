@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom';
 import styles from './Boton.module.css';
 
-const Boton = ({ url, texto, clase }) => {
+const Boton = ({texto, clase, tipo }) => {
     return (
-        <Link to={url}>
-            <button className={`${styles.boton} ${styles[clase]}`}>{texto}</button>
-        </Link>
+            <button type={tipo} className={`${styles.boton} ${styles[clase]}`}>{texto}</button>
     );
 }
 

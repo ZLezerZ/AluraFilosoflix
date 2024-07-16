@@ -6,30 +6,28 @@ import { ContextoGlobal } from '../ContextoGlobal/ContextoGlobal';
 import imgBanner from '../../assets/img/banner-filosofiaB.jpg';
 const Banner = () => {
 
-    const {videos} = useContext(ContextoGlobal);
-
+    const { videos } = useContext(ContextoGlobal);
+    //Para evitar un error cuando la lista de videos no se cargado todavía
+    if (!videos || videos.length === 0) {
+        return <div className={styles.cargando}><Titulo titulo={"Cargando..."} color={"#ec6d60"} /></div>
+    }
     return (
-        <section className={styles.contenedor} style={{ backgroundImage: `url(${imgBanner})`}}>
+        <section className={styles.contenedor} style={{ backgroundImage: `url(${imgBanner})` }}>
             <div className={styles.gradiente}>
                 <div className={styles.tarjetaApaizada}>
                     <div className={styles.info}>
-                        <Titulo titulo={"videos[x].categoria"} color={"#ec6d60"} />
-                        <h3>{"videos[x].titulo"}</h3>
-                        <p>{"videos[x].descripcion lor ipsumasdf  asdf asdf asdf asdf asdf asdf asdf asdf asdf asf asfd asfd asdf asdfaffaf ghdgsfhgdsfhdfgh "}</p>
+                        <Titulo titulo={`${videos[3].categoria}`} color={"#ec6d60"} />
+                        <h3>{`${videos[3].titulo}`}</h3>
+                        <p>{`${videos[3].descripcion}`}</p>
                     </div>
-                    {/* <Link to={`/${videos[0].id}`}> */}
                     <iframe
                         width="500"
                         height="300"
                         src="https://www.youtube.com/embed/WtD_FJHxpWM"
                         title="YouTube video player"
                         frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                     ></iframe>
-
-                    {/* </Link> */}
-
                 </div>
             </div>
         </section>
