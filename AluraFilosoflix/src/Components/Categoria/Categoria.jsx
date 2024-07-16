@@ -11,12 +11,12 @@ const Categoria = ({ categoria }) => {
 
     return (
         <section className={styles.contenedor}>
-            <Titulo titulo={categoria.titulo} color={categoria.color}></Titulo>
+            <Titulo titulo={categoria.titulo} colorPrimario={categoria.colorPrimario}></Titulo>
             {videosDeCategoria.length === 0 ? <span><p className={styles.sinVideos}>No hay videos disponibles en esta categoría</p></span> :(
             <ul className={styles.listaVideos}>
                 {videos.filter((video) => video.categoria === categoria.titulo)
                     .map((video) => (
-                        <Carta video={video} key={video.id} color={categoria.color}></Carta>
+                        <Carta video={video} key={video.id} colorPrimario={categoria.colorPrimario} colorSecundario={categoria.colorSecundario}></Carta>
                     ))}
             </ul>
             )}

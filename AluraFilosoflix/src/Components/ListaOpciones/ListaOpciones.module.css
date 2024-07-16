@@ -11,7 +11,7 @@
     font-size: 1.2rem;
 }
 
-.contenedor input {
+.contenedor select {
     box-sizing: border-box;
     width: 100%;
     padding: 1em;
@@ -21,4 +21,13 @@
     color: var(--blanco);
     font-size: .9rem;
     box-shadow: 0 0 5px var(--azul);
+}
+
+.contenedor option{
+    background-color: rgba(31, 118, 224, .5);
+    color: var(--blanco);
+    font-size: 1rem;
+    padding: 2em;
+    box-shadow:  0 0 5px var(--azul);
+    line-height: 1.5;
 }

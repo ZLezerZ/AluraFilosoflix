@@ -6,6 +6,7 @@
     justify-content: space-between;
     border-radius: 20px;
     overflow: hidden;
+    background-color: rgb(25,25,25);
 }
 
 .encabezado{
@@ -31,7 +32,6 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color: var(--footer);
 }
 
 .contenedorBotones button{
