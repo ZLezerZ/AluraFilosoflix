@@ -3,11 +3,11 @@ import { ContextoGlobal } from "../ContextoGlobal/ContextoGlobal";
 import Formulario from "../Formulario/Formulario";
 
 const Modal = ({video}) => {
-    // const { videos } = useContext(ContextoGlobal);
+    const { cerrarModalEditar } = useContext(ContextoGlobal);
     return (
         <>
             <dialog open={!!video}>
-                <Formulario video={video}></Formulario>
+                <Formulario video={video} titulo={"EDITAR VIDEO"} cerrarModalEditar={cerrarModalEditar}></Formulario>
                 <form method="dialog">
                     <button>OK</button>
                 </form>

@@ -24,16 +24,14 @@ const ContextoGlobalProvider = ({ children }) => {
     ]);
     const [videoAEditar, setVideoAEditar] = useState(null);
 
-    // useEffect(() => {
-    //     if (videos.length > 0) {
-    //         setVideoAEditar(videos[0]); // Aquí puedes establecer cualquier video por defecto
-    //     }
-    // }, [videos]);
-
     const abrirModalEditar = (video) => {
         setVideoAEditar(video);
     };
 
+    const cerrarModalEditar = () => {
+        setVideoAEditar(null);
+    };
+    
     const eliminarVideo = async (id) => {
         try {
             const respuesta = await fetch(`https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/videos/${id}`, {
@@ -62,7 +60,7 @@ const ContextoGlobalProvider = ({ children }) => {
     }, []);
 
     return (
-        <ContextoGlobal.Provider value={{ videos, setVideos, categorias, setCategorias, eliminarVideo, videoAEditar, setVideoAEditar, abrirModalEditar }}>
+        <ContextoGlobal.Provider value={{ videos, setVideos, categorias, setCategorias, eliminarVideo, videoAEditar, setVideoAEditar, abrirModalEditar, cerrarModalEditar}}>
             {children}
         </ContextoGlobal.Provider>
     );
