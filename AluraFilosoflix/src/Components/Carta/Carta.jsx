@@ -17,6 +17,7 @@ const Carta = ({ video, colorPrimario, colorSecundario }) => {
                 <iframe
                     src={`https://youtube.com/embed/${videoURL}`}
                     title="YouTube video player"
+                    
                 ></iframe>
             </div>
 

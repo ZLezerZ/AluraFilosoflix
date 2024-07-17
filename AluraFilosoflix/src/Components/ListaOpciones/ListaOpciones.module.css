@@ -31,3 +31,14 @@
     box-shadow:  0 0 5px var(--azul);
     line-height: 1.5;
 }
+
+@media screen and (max-width: 500px) {
+    .label{
+        font-size: 1rem;
+    }
+    .contenedor select {
+        padding: .9em;
+        font-size: .8rem;
+    }
+    
+}

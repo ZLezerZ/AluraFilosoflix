@@ -59,7 +59,7 @@
 @media screen and (max-width: 800px) {
     .contenedor {
         width: 200px;
-        min-width: 150px;
+        min-width: 160px;
         height: 200px;
         margin: 1em .5em;
         border-radius: 15px;
@@ -76,16 +76,17 @@
     }
 
     .contenedorBotones {
-        gap: 0;
-        width: 100%;
+        padding: 0 .3em;
     }
 
     .contenedorBotones button {
-        font-size: .6rem;
+        gap: .5em;
+        padding: 1em .5em;
+        font-size: .45rem;
     }
 
     .icono {
-        font-size: .6rem;
+        font-size: .8rem;
     }
 
 }

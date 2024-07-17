@@ -1,3 +1,4 @@
+import { PiCopyrightBold } from "react-icons/pi";
 import Logo from '../Logo/Logo';
 import styles from './Rodapie.module.css';
 
@@ -6,7 +7,7 @@ const Rodapie = () => {
         <footer className={styles.footer}>
             <Logo/>
             <p>Desarrollada por Leonardo Esteban Zermoglio </p>
-            <p>CopyRight - 2024 </p>
+            <p>© CopyRight - 2024 </p>
         </footer>
     );
 }

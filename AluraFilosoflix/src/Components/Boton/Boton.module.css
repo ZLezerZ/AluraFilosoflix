@@ -25,3 +25,11 @@
 .botonAzul:hover {
     box-shadow: inset 0 0 20px 2px var(--azul);
 }
+
+@media screen and (max-width: 500px) {
+    .boton {
+        width: 100px;
+        line-height: 2.5em;
+    }
+    
+}

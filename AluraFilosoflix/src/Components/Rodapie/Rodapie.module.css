@@ -8,8 +8,20 @@
 }
 
 .footer p{
+    text-align: center;
     color: var(--blanco);
     font-family: var(--font);
     font-size: 1rem;
     margin-top: 1em ;
+}
+
+@media screen and (max-width: 800px) {
+    .footer {
+        padding: 1em;
+    }
+    
+    .footer p {
+        font-size: .8rem;
+    }
+    
 }
