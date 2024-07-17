@@ -12,7 +12,7 @@ const Carta = ({ video, colorPrimario, colorSecundario }) => {
     let videoURL = video.url.slice(17)
 
     return (
-        <li className={styles.contenedor} style={{ border: `2px solid ${colorPrimario}`, boxShadow: `0 0 15px ${colorPrimario}` }}>
+        <li className={styles.contenedor} style={{"--colorPrimario": colorPrimario,}} >
             <div className={styles.encabezado}>
                 <iframe
                     src={`https://youtube.com/embed/${videoURL}`}
@@ -33,3 +33,4 @@ const Carta = ({ video, colorPrimario, colorSecundario }) => {
 };
 
 export default Carta;
+

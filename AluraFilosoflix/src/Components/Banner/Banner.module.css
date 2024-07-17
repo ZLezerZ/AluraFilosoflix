@@ -71,3 +71,41 @@
     border: 2px solid #ec6d60;
     box-shadow: 0 0 10px #ec6d60;
 }
+
+@media screen and (max-width: 768px) {
+
+    .contenedor{
+        height: 270px;
+    }
+    .gradiente{
+        align-items: flex-start;
+        padding: 1.2rem;
+    }
+    .tarjetaApaizada{
+        height: 200px;
+        flex-direction: column;
+        gap: 1em;
+    }
+    .info .categoria{
+        font-size: 1.5rem;
+    }
+    .tarjetaApaizada iframe{
+        display: flex;
+        width: 100%;
+        height: 150px;
+    }
+    .info{
+        width: 100%;
+    }
+    .info h3{
+        font-size: 1rem;
+    }
+    .info p{
+        display: none;
+    }
+    
+
+
+
+    
+}

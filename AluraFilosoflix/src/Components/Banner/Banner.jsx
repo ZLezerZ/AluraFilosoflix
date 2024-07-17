@@ -16,7 +16,7 @@ const Banner = () => {
             <div className={styles.gradiente}>
                 <div className={styles.tarjetaApaizada}>
                     <div className={styles.info}>
-                        <Titulo titulo={`${videos[3].categoria}`} color={"#ec6d60"} />
+                        <h2 className={styles.categoria}>{videos[3].categoria}</h2>
                         <h3>{`${videos[3].titulo}`}</h3>
                         <p>{`${videos[3].descripcion}`}</p>
                     </div>
