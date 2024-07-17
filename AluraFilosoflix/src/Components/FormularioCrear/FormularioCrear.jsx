@@ -43,6 +43,7 @@ const FormularioCrear = ({titulo, descripcion}) => {
         <form className={styles.formulario} onSubmit={manejarSubmit}>
                 <h3>{titulo}</h3>
                 <p>{descripcion}</p>
+                <h4>CREAR TARJETA</h4>
                 <div className={styles.campos}>
                     <ListaOpciones textoCampo={"Categoria"} value={nuevoVideo.categoria} nombre={"categoria"} evento={manejarCambio}/>
                     {/* <CampoTexto textoCampo={"Categoria"} value={videoAEditar.categoria} nombre={"categoria"}></CampoTexto> */}

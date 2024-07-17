@@ -9,7 +9,7 @@
     --logo: rgb(7, 85, 170);
     --azul: rgb(34, 113, 209);
 }
-body{
+body, html{
     width: 100%;
 }
 

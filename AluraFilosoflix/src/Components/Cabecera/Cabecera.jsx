@@ -2,6 +2,8 @@ import styles from './Cabecera.module.css';
 import Logo from '../Logo/Logo';
 import Boton from '../Boton/Boton';
 import { Link } from 'react-router-dom';
+import { FaHome } from "react-icons/fa";
+import { MdOutlineFileUpload } from "react-icons/md";
 
 const Cabecera = () => {
     return (
@@ -9,10 +11,10 @@ const Cabecera = () => {
             <Logo />
             <nav className={styles.contenedorBotones}>
                 <Link to={"./"}>
-                    <Boton texto={"HOME"} clase={"botonAzul"}></Boton>
+                <FaHome className={styles.botonCasa} /> <span ClassName={styles.botonGrande}><Boton  texto={"HOME"} clase={"botonAzul"}></Boton></span>
                 </Link>
                 <Link to={"/nuevoVideo"}>
-                    <Boton texto={"NUEVO VIDEO"} clase={"botonBlanco"}></Boton>
+                <MdOutlineFileUpload className={styles.botonSubir}/> <span ClassName={styles.botonGrande}><Boton className={styles.botonGrande} texto={"NUEVO VIDEO"} clase={"botonBlanco"}></Boton></span>
                 </Link>
 
             </nav>

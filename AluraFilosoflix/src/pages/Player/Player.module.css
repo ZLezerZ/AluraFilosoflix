@@ -1,0 +1,48 @@
+.contenedor {
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    gap: 2em;
+    padding: 1em;
+}
+
+.contenedorInfo {
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5em;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.contenedorInfo h2{
+    color: var(--blanco);
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 1em;
+}
+.contenedorInfo h3{
+    color: rgb(148, 148, 148);
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.contenedorVideo {
+    width: 50%;
+}
+
+.contenedor iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 10px var(--azul)) drop-shadow(0 0 0 var(--blanco));
+}
+
+/* 
+<div className={styles.contenedorInfo}>
+<h1>{video.categoria}</h1>
+<h2>{video.titulo}</h2>
+<p>{video.descripcion}</p>
+</div> */
