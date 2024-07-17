@@ -27,6 +27,8 @@ const FormularioCrear = ({titulo, descripcion}) => {
         const videoConID = { ...nuevoVideo, id }; //Acá genero un nuevo objeto pero esta vez agregando el ID
         setVideos([...videos, videoConID]); //Acá actualizo el estado local con todos los videos más el nuevo video con ID
         crearVideo(videoConID); // Acá actualizo la base de datos con el POST
+        limpiarFormulario();
+        alert("Video creado con éxito");
     };
 
     const limpiarFormulario = () => {
