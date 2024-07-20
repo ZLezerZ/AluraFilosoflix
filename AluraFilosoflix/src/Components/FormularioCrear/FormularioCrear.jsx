@@ -23,7 +23,8 @@ const FormularioCrear = ({titulo, descripcion}) => {
 
     const manejarSubmit = (e) => {
         e.preventDefault();
-        const id = videos.length > 0 ? videos[videos.length - 1].id + 1 : 1;
+        let id = videos.length > 0 ? parseInt(videos[videos.length - 1].id) + 1 : 1;
+        id = id.toString();
         const videoConID = { ...nuevoVideo, id }; //Acá genero un nuevo objeto pero esta vez agregando el ID
         setVideos([...videos, videoConID]); //Acá actualizo el estado local con todos los videos más el nuevo video con ID
         crearVideo(videoConID); // Acá actualizo la base de datos con el POST
