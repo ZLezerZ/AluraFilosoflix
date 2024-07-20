@@ -24,7 +24,7 @@ const Carta = ({ video, colorPrimario, colorSecundario }) => {
             <h3>{video.titulo}</h3>
             <div className={styles.contenedorBotones} style={{backgroundColor: `${colorSecundario}`}}>
                 <button onClick={() => eliminarVideo(video.id)}><FaTrashCan className={styles.icono} />BORRAR</button>
-                <button onClick={() => abrirModalEditar({...video})}><AiFillEdit className={styles.icono} />EDITAR</button>
+                <button onClick={() => {abrirModalEditar({...video})}}><AiFillEdit className={styles.icono} />EDITAR</button>
                 <Link to={`/${video.id}`}>
                     <button><FaExpandAlt className={styles.icono} /></button>
                 </Link>

@@ -47,9 +47,9 @@ const ContextoGlobalProvider = ({ children }) => {
 useEffect(() => {
     const getData = async () => {
         try {
-            const respuesta = await fetch('https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/db');
+            const respuesta = await fetch('http://localhost:3001/videos');
             const data = await respuesta.json();
-            setVideos(data.videos);
+            setVideos(data);
         } catch (error) {
             console.error('Error al traer los videos:', error);
         }
@@ -60,7 +60,7 @@ useEffect(() => {
 //POST
     const crearVideo = async (video) => {
         try {
-            const respuesta = await fetch('https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/videos', {
+            const respuesta = await fetch('http://localhost:3001/videos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -80,8 +80,9 @@ useEffect(() => {
 
 //PUT
     const actualizarVideo = async (video) => {
+        console.log("video a modificar", video)
         try {
-            const respuesta = await fetch(`https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/videos/${video.id}`, {
+            const respuesta = await fetch(`http://localhost:3001/videos/${video.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -102,7 +103,8 @@ useEffect(() => {
 //DELETE
     const eliminarVideo = async (id) => {
         try {
-            const respuesta = await fetch(`https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/videos/${id}`, {
+            const respuesta = await fetch(`http://localhost:3001/videos/${id}`, {
+            // const respuesta = await fetch(`https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/videos/${id}`, {
                 method: 'DELETE'
             });
             if (!respuesta.ok) {
