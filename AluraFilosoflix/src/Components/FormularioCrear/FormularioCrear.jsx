@@ -22,7 +22,6 @@ const FormularioCrear = ({titulo, descripcion}) => {
     };
 
     const manejarSubmit = (e) => {
-        let mayorId = 0;
         e.preventDefault();
         let id = videos.length > 0 ? parseInt(videos[videos.length - 1].id) + 1 : 1;
         id = id.toString();

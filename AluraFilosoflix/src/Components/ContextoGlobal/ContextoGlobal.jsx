@@ -66,7 +66,6 @@ if (!videos) {
     const crearVideo = async (video) => {
         try {
             const respuesta = await fetch('http://localhost:3001/videos', {
-            const respuesta = await fetch('http://localhost:3001/videos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -88,7 +87,6 @@ if (!videos) {
     const actualizarVideo = async (video) => {
         console.log("video a modificar", video)
         try {
-            const respuesta = await fetch(`http://localhost:3001/videos/${video.id}`, {
             const respuesta = await fetch(`http://localhost:3001/videos/${video.id}`, {
                 method: 'PUT',
                 headers: {
