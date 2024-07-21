@@ -6,16 +6,25 @@ import { FaExpandAlt } from "react-icons/fa";
 import { ContextoGlobal } from "../ContextoGlobal/ContextoGlobal";
 import { useContext } from "react";
 
+function extraerId(url) {
+    const pattern = /(?:v=|\/)([0-9A-Za-z_-]{11}).*/;
+    const match = url.match(pattern);
+    if (match) {
+        return match[1];
+    }
+    return null;
+}
+
 const Carta = ({ video, colorPrimario, colorSecundario }) => {
 
     const { eliminarVideo, abrirModalEditar } = useContext(ContextoGlobal);
-    let videoURL = video.url.slice(17)
-
+    let videoId = extraerId(video.url);
+    console.log(videoId);
     return (
         <li className={styles.contenedor} style={{"--colorPrimario": colorPrimario,}} >
             <div className={styles.encabezado}>
                 <iframe
-                    src={`https://youtube.com/embed/${videoURL}`}
+                    src={`https://youtube.com/embed/${videoId}`}
                     title="YouTube video player"
                     
                 ></iframe>
