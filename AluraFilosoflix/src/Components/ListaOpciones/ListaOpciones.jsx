@@ -5,13 +5,16 @@ import styles from "./ListaOpciones.module.css";
 const ListaOpciones = ({ textoCampo, value, nombre, evento }) => {
 
 const {categorias} = useContext(ContextoGlobal);
+const listaOp = `listaOpciones-${nombre}`;
+
 
   return (
     <div className={styles.contenedor}>
-      <label className={styles.label}>{textoCampo}</label>
+      <label className={styles.label} htmlFor={listaOp} >{textoCampo}</label>
 
       <select 
       required
+      id={listaOp}
       name={nombre}
       value={value} 
       onChange={evento}
