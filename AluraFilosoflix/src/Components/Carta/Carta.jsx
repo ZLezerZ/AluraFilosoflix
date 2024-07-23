@@ -19,7 +19,6 @@ const Carta = ({ video, colorPrimario, colorSecundario }) => {
 
     const { eliminarVideo, abrirModalEditar } = useContext(ContextoGlobal);
     let videoId = video.url ? extraerId(video.url) : null;
-    console.log(videoId);
     return (
         <li className={styles.contenedor} style={{"--colorPrimario": colorPrimario,}} >
             <div className={styles.encabezado}>

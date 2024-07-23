@@ -47,10 +47,10 @@ const ContextoGlobalProvider = ({ children }) => {
 useEffect(() => {
     const getData = async () => {
         try {
-            // const respuesta = await fetch('https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/db'); //cuando usa una url de typicode se usa data.videos
-            const respuesta = await fetch('http://localhost:3001/videos'); //cuando se corre en local se setean los videos con el array data directamente
+            const respuesta = await fetch('https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/db'); //cuando usa una url de typicode se usa data.videos
+            // const respuesta = await fetch('http://localhost:3001/videos'); //cuando se corre en local se setean los videos con el array data directamente
             const data = await respuesta.json();
-            setVideos(data); //
+            setVideos(data.videos); //
         } catch (error) {
             console.error('Error al traer los videos:', error);
         }
@@ -65,7 +65,7 @@ if (!videos) {
 //POST
     const crearVideo = async (video) => {
         try {
-            const respuesta = await fetch('http://localhost:3001/videos', {
+            const respuesta = await fetch('https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/videos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -80,14 +80,12 @@ if (!videos) {
         } catch (error) {
             alert('No fue posible crear el video: ', error);
         }
-        console.log("Video creado: ", video);
     };
 
 //PUT
     const actualizarVideo = async (video) => {
-        console.log("video a modificar", video)
         try {
-            const respuesta = await fetch(`http://localhost:3001/videos/${video.id}`, {
+            const respuesta = await fetch(`https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/videos/${video.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -100,24 +98,25 @@ if (!videos) {
             const videosActualizados = videos.map((v) => v.id === video.id ? video : v);
             setVideos(videosActualizados);
         } catch (error) {
-            alert('No fue posible actualizar el video: ', error);
+            // alert('No fue posible actualizar el video: ', error); //No se usa en vercel porque no serviría para los nuevos videos creados ya que el servidor fake no admite POST ni PUT ni DELETE
         }
-        console.log("Video actualizado: ", video);
     };
 
 //DELETE
     const eliminarVideo = async (id) => {
-        try {
-            const respuesta = await fetch(`http://localhost:3001/videos/${id}`, {
-                method: 'DELETE'
-            });
-            if (!respuesta.ok) {
-                throw new Error('Se ha producido un error al eliminar el video');
-            }
-            setVideos(videos.filter((video) => video.id !== id));
-        } catch (error) {
-            alert('No fue posible eliminar el video: ', error);
-        }
+                setVideos(videos.filter((video) => video.id !== id));
+
+    //     try {
+    //         const respuesta = await fetch(`https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/videos/${id}`, {
+    //             method: 'DELETE'
+    //         });
+    //         if (!respuesta.ok) {
+    //             throw new Error('Se ha producido un error al eliminar el video');
+    //         }
+    //         setVideos(videos.filter((video) => video.id !== id));
+    //     } catch (error) {
+    //         alert('No fue posible eliminar el video: ', error);
+    //     }
     }
 //Funciones para la API  - GET, POST, PUT, DELETE
 
