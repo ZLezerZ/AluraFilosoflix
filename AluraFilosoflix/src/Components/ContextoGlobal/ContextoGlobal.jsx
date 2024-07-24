@@ -41,6 +41,26 @@ const ContextoGlobalProvider = ({ children }) => {
     };
 //Lógica para el modal formulario de edición
 
+
+//Funciones para la API  - GET, POST, PUT, DELETE
+//GET
+useEffect(() => {
+    const getData = async () => {
+        try {
+            // const respuesta = await fetch('https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/db'); //cuando usa una url de typicode se usa data.videos
+            const respuesta = await fetch('http://localhost:3001/videos'); //cuando se corre en local se setean los videos con el array data directamente
+            const data = await respuesta.json();
+            setVideos(data); //
+        } catch (error) {
+            console.error('Error al traer los videos:', error);
+        }
+    };
+    getData();
+}, []);
+
+if (!videos) {
+    return <div>Loading...</div>;
+}
 //Función para reenderizar urls de videos
 function extraerId(url) {
     const pattern = /(?:v=|\/)([0-9A-Za-z_-]{11}).*/;
@@ -52,30 +72,10 @@ function extraerId(url) {
 }
 //Función para reenderizar urls de videos
 
-//Funciones para la API  - GET, POST, PUT, DELETE
-//GET
-useEffect(() => {
-    const getData = async () => {
-        try {
-            const respuesta = await fetch('https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/db'); //cuando usa una url de typicode se usa data.videos
-            // const respuesta = await fetch('http://localhost:3001/videos'); //cuando se corre en local se setean los videos con el array data directamente
-            const data = await respuesta.json();
-            setVideos(data.videos); //
-        } catch (error) {
-            console.error('Error al traer los videos:', error);
-        }
-    };
-    getData();
-}, []);
-
-if (!videos) {
-    return <div>Loading...</div>;
-}
-
 //POST
     const crearVideo = async (video) => {
         try {
-            const respuesta = await fetch('https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/videos', {
+            const respuesta = await fetch('http://localhost:3001/videos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -90,12 +90,14 @@ if (!videos) {
         } catch (error) {
             alert('No fue posible crear el video: ', error);
         }
+        console.log("Video creado: ", video);
     };
 
 //PUT
     const actualizarVideo = async (video) => {
+        console.log("video a modificar", video)
         try {
-            const respuesta = await fetch(`https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/videos/${video.id}`, {
+            const respuesta = await fetch(`http://localhost:3001/videos/${video.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -108,25 +110,24 @@ if (!videos) {
             const videosActualizados = videos.map((v) => v.id === video.id ? video : v);
             setVideos(videosActualizados);
         } catch (error) {
-            // alert('No fue posible actualizar el video: ', error); //No se usa en vercel porque no serviría para los nuevos videos creados ya que el servidor fake no admite POST ni PUT ni DELETE
+            alert('No fue posible actualizar el video: ', error);
         }
+        console.log("Video actualizado: ", video);
     };
 
 //DELETE
     const eliminarVideo = async (id) => {
-                setVideos(videos.filter((video) => video.id !== id));
-
-    //     try {
-    //         const respuesta = await fetch(`https://my-json-server.typicode.com/ZLezerZ/AluraFilosoflix/videos/${id}`, {
-    //             method: 'DELETE'
-    //         });
-    //         if (!respuesta.ok) {
-    //             throw new Error('Se ha producido un error al eliminar el video');
-    //         }
-    //         setVideos(videos.filter((video) => video.id !== id));
-    //     } catch (error) {
-    //         alert('No fue posible eliminar el video: ', error);
-    //     }
+        try {
+            const respuesta = await fetch(`http://localhost:3001/videos/${id}`, {
+                method: 'DELETE'
+            });
+            if (!respuesta.ok) {
+                throw new Error('Se ha producido un error al eliminar el video');
+            }
+            setVideos(videos.filter((video) => video.id !== id));
+        } catch (error) {
+            alert('No fue posible eliminar el video: ', error);
+        }
     }
 //Funciones para la API  - GET, POST, PUT, DELETE
 
@@ -135,7 +136,7 @@ if (!videos) {
             videos, setVideos, categorias, setCategorias, // Para manejar los estados más generales
             eliminarVideo, actualizarVideo, crearVideo,  // Para manejar funciones API
             videoAEditar, setVideoAEditar, abrirModalEditar, cerrarModalEditar, // Para manejar el modal de formulario de edición
-            extraerId // Para manejar la función que renderiza las urls de los videos
+            extraerId
             }}> 
             {children}
         </ContextoGlobal.Provider>
