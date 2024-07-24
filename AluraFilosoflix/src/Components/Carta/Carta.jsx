@@ -6,18 +6,11 @@ import { FaExpandAlt } from "react-icons/fa";
 import { ContextoGlobal } from "../ContextoGlobal/ContextoGlobal";
 import { useContext } from "react";
 
-function extraerId(url) {
-    const pattern = /(?:v=|\/)([0-9A-Za-z_-]{11}).*/;
-    const match = url.match(pattern);
-    if (match) {
-        return match[1];
-    }
-    return null;
-}
+
 
 const Carta = ({ video, colorPrimario, colorSecundario }) => {
 
-    const { eliminarVideo, abrirModalEditar } = useContext(ContextoGlobal);
+    const { eliminarVideo, abrirModalEditar, extraerId } = useContext(ContextoGlobal);
     let videoId = video.url ? extraerId(video.url) : null;
     return (
         <li className={styles.contenedor} style={{"--colorPrimario": colorPrimario,}} >

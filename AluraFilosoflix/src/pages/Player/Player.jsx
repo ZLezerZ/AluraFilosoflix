@@ -3,9 +3,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ContextoGlobal } from "../../Components/ContextoGlobal/ContextoGlobal";
 import Contenedor from "../../Components/Contenedor/Contenedor";
 import styles from "./Player.module.css";
+
 const Player = () => {
   const { id } = useParams();
-  const { videos } = useContext(ContextoGlobal);
+  const { videos,extraerId } = useContext(ContextoGlobal);
   const navigate = useNavigate();
   const [cargando, setCargando] = useState(true);
 
@@ -20,6 +21,8 @@ const Player = () => {
       setCargando(false);
     }
   }, [id, video, videos, navigate]);
+
+  const videoId = video ? extraerId(video.url) : null;
 
   return cargando ? (
     <div className={styles.cargando}>
@@ -44,7 +47,7 @@ const Player = () => {
               <iframe
                 width="500"
                 height="300"
-                src={`https://youtube.com/embed/${video.url.slice(17)}`}
+                src={`https://youtube.com/embed/${videoId}`}
                 title="YouTube video player"
                 frameBorder="0"
                 allowFullScreen

@@ -41,6 +41,16 @@ const ContextoGlobalProvider = ({ children }) => {
     };
 //Lógica para el modal formulario de edición
 
+//Función para reenderizar urls de videos
+function extraerId(url) {
+    const pattern = /(?:v=|\/)([0-9A-Za-z_-]{11}).*/;
+    const match = url.match(pattern);
+    if (match) {
+        return match[1];
+    }
+    return null;
+}
+//Función para reenderizar urls de videos
 
 //Funciones para la API  - GET, POST, PUT, DELETE
 //GET
@@ -125,6 +135,7 @@ if (!videos) {
             videos, setVideos, categorias, setCategorias, // Para manejar los estados más generales
             eliminarVideo, actualizarVideo, crearVideo,  // Para manejar funciones API
             videoAEditar, setVideoAEditar, abrirModalEditar, cerrarModalEditar, // Para manejar el modal de formulario de edición
+            extraerId // Para manejar la función que renderiza las urls de los videos
             }}> 
             {children}
         </ContextoGlobal.Provider>
