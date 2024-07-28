@@ -9,7 +9,6 @@ const Modal = ({video}) => {
             <dialog open={!!video}>
                 <FormularioModal video={video} titulo={"EDITAR VIDEO"} cerrarModalEditar={cerrarModalEditar}></FormularioModal>
                 <form method="dialog">
-                    <button>OK</button>
                 </form>
             </dialog>
         </>
