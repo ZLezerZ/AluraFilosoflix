@@ -1,6 +1,5 @@
-const fs = require('fs');
-const path = require('path');
-const videosPath = path.resolve(__dirname, './videos.json');
+const { readFileSync, writeFileSync } = require('fs');
+const { join } = require('path');
 
 exports.handler = async (event, context) => {
     if (event.httpMethod !== 'POST') {
@@ -10,16 +9,20 @@ exports.handler = async (event, context) => {
         };
     }
 
-    const newVideo = JSON.parse(event.body);
-    const videos = JSON.parse(fs.readFileSync(videosPath, 'utf-8'));
-
-    newVideo.id = videos.length ? videos[videos.length - 1].id + 1 : 1;
-    videos.push(newVideo);
-
-    fs.writeFileSync(videosPath, JSON.stringify(videos, null, 2));
-
-    return {
-        statusCode: 201,
-        body: JSON.stringify(newVideo)
-    };
+    try {
+        const data = readFileSync(join(__dirname, '..', 'videos.json'), 'utf8');
+        const videos = JSON.parse(data);
+        const newVideo = JSON.parse(event.body);
+        videos.push(newVideo);
+        writeFileSync(join(__dirname, '..', 'videos.json'), JSON.stringify(videos));
+        return {
+            statusCode: 200,
+            body: JSON.stringify(newVideo),
+        };
+    } catch (error) {
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: 'Error al añadir el video' }),
+        };
+    }
 };

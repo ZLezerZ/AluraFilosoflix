@@ -59,9 +59,9 @@ const ContextoGlobalProvider = ({ children }) => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const respuesta = await fetch('/.netlify/functions/getVideos');
+                const respuesta = await fetch('http://localhost:8888/.netlify/functions/getVideos');
                 const data = await respuesta.json();
-                setVideos(data);
+                setVideos(data.videos);
             } catch (error) {
                 console.error('Error al traer los videos:', error);
             }
@@ -86,7 +86,7 @@ const ContextoGlobalProvider = ({ children }) => {
     //POST
     const crearVideo = async (video) => {
         try {
-            const respuesta = await fetch('http://localhost:3001/videos', {
+            const respuesta = await fetch('http://localhost:8888/.netlify/functions/getVideos', { //solo se modifica el link del fetch
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -103,7 +103,6 @@ const ContextoGlobalProvider = ({ children }) => {
         }
         console.log("Video creado: ", video);
     };
-
     //PUT
     const actualizarVideo = async (video) => {
         console.log("video a modificar", video)
