@@ -13,10 +13,11 @@ exports.handler = async (event, context) => {
         const data = readFileSync(join(__dirname, '..', 'videos.json'), 'utf8');
         const videos = JSON.parse(data);
         const newVideo = JSON.parse(event.body);
+        newVideo.id = videos.length ? videos[videos.length - 1].id + 1 : 1;
         videos.push(newVideo);
         writeFileSync(join(__dirname, '..', 'videos.json'), JSON.stringify(videos));
         return {
-            statusCode: 200,
+            statusCode: 201,
             body: JSON.stringify(newVideo),
         };
     } catch (error) {

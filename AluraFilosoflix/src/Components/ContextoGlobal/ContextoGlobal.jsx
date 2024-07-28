@@ -86,7 +86,7 @@ const ContextoGlobalProvider = ({ children }) => {
     //POST
     const crearVideo = async (video) => {
         try {
-            const respuesta = await fetch('http://localhost:8888/.netlify/functions/getVideos', { //solo se modifica el link del fetch
+            const respuesta = await fetch('http://localhost:8888/.netlify/functions/addVideos', { //solo se modifica el link del fetch
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -128,7 +128,7 @@ const ContextoGlobalProvider = ({ children }) => {
     //DELETE
     const eliminarVideo = async (id) => {
         try {
-            const respuesta = await fetch(`http://localhost:3001/videos/${id}`, {
+            const respuesta = await fetch(`http://localhost:8888/.netlify/functions/getVideos/${id}`, {
                 method: 'DELETE'
             });
             if (!respuesta.ok) {
