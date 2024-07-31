@@ -1,8 +1,11 @@
-const videos = require('../../../db.json');
+import videos from '../../db.json';
 
-exports.handler = async function(event, context) {
+export async function handler(event, context) {
     return {
         statusCode: 200,
-        body: JSON.stringify(videos)
+        body: JSON.stringify(videos),
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+        },
     };
-};
+}

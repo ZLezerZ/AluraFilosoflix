@@ -4,4 +4,4 @@
   base = "AluraFilosoflix"
 
 [functions]
-  directory = "AluraFilosoflix/AluraFilosoflix/netlify/functions"
+  directory = "netlify/functions"

@@ -96,6 +96,9 @@ const ContextoGlobalProvider = ({ children }) => {
             if (!respuesta.ok) {
                 throw new Error('Se ha producido un error al crear el video');
             }
+            else{
+                alert('Video creado correctamente');
+            }
             const videoCreado = await respuesta.json();
             setVideos([...videos, videoCreado]);
         } catch (error) {
@@ -128,17 +131,25 @@ const ContextoGlobalProvider = ({ children }) => {
     //DELETE
     const eliminarVideo = async (id) => {
         try {
-            const respuesta = await fetch(`http://localhost:8888/.netlify/functions/getVideos/${id}`, {
-                method: 'DELETE'
+            const respuesta = await fetch(`http://localhost:8888/.netlify/functions/deleteVideo`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id }),
             });
+    
             if (!respuesta.ok) {
                 throw new Error('Se ha producido un error al eliminar el video');
+            }else{
+                alert('Video eliminado correctamente');
             }
+    
             setVideos(videos.filter((video) => video.id !== id));
         } catch (error) {
-            alert('No fue posible eliminar el video: ', error);
+            alert('No fue posible eliminar el video: ' + error);
         }
-    }
+    };
     //Funciones para la API  - GET, POST, PUT, DELETE
 
     return (
