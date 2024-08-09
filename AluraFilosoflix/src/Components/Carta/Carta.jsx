@@ -15,11 +15,11 @@ const Carta = ({ video, colorPrimario, colorSecundario }) => {
     return (
         <li className={styles.contenedor} style={{"--colorPrimario": colorPrimario,}} >
             <div className={styles.encabezado}>
-                <iframe
+                <lite-youtube videoid={videoId} title="YouTube video player"></lite-youtube>
+                {/* <iframe
                     src={`https://youtube.com/embed/${videoId}`}
                     title="YouTube video player"
-                    
-                ></iframe>
+                ></iframe> */}
             </div>
 
             <h3>{video.titulo}</h3>
